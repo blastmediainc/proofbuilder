@@ -1,1 +1,1 @@
-Blast Media Print Mockup Builder — updated page instructions, clean artwork names, page-specific quantities, and smaller single-artwork layout. Upload index.html to GitHub Pages.
+Open index.html in a browser. Each page has its own material field; artwork rows show quantity and ordering controls only.

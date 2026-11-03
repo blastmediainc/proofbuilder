@@ -1,3 +1,1 @@
-Blast Media Print Mockup Builder
-Open index.html in a browser or publish it to GitHub Pages.
-Use the Thin outline around artwork checkbox to turn borders on or off in both preview and exported PDF.
+Blast Media Print Mockup Builder. Deadline displays month and day without year. Artwork captions have extra padding in preview and PDF.

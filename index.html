@@ -308,7 +308,7 @@ pg.items.forEach((a,i)=>{
  el.addEventListener('click',()=>{selectedArtworkId=a.id;refreshEditor()});
  list.append(el);
  // Keep the quantity directly under the last filename line, including wrapped names.
- const placeQty=()=>{if(!el.isConnected)return;qty.style.setProperty('top',`calc(100% + ${5 + name.getBoundingClientRect().height + 2}px)`,'important');qty.style.setProperty('bottom','auto','important')};
+ const placeQty=()=>{if(!el.isConnected)return;qty.style.setProperty('top',`calc(100% + ${5 + name.getBoundingClientRect().height + 12}px)`,'important');qty.style.setProperty('bottom','auto','important')};
  placeQty();requestAnimationFrame(placeQty);
 })
 }refreshEditor();const items=$('items');items.innerHTML='';pg?.items.forEach((a,i)=>{const owner=selectedManualPage();const ownerIndex=owner.items.indexOf(a);const el=document.createElement('div');el.className='item';const img=document.createElement('img');img.className='thumb';img.src=a.url;const info=document.createElement('div');info.className='iteminfo';const name=document.createElement('div');name.className='filename';name.textContent=displayName(a.name);const controls=document.createElement('div');controls.className='itemrow';const qlabel=document.createElement('label');qlabel.textContent='QTY';const q=document.createElement('input');q.type='number';q.min='0';q.value=a.qty;q.title='Artwork quantity';q.addEventListener('change',()=>{a.qty=Math.max(0,Number.parseInt(q.value,10)||0);render()});const up=document.createElement('button');up.className='smallbtn';up.textContent='↑';up.title='Move up';up.disabled=ownerIndex===0;up.onclick=()=>{[owner.items[ownerIndex-1],owner.items[ownerIndex]]=[owner.items[ownerIndex],owner.items[ownerIndex-1]];render()};const down=document.createElement('button');down.className='smallbtn';down.textContent='↓';down.title='Move down';down.disabled=ownerIndex===owner.items.length-1;down.onclick=()=>{[owner.items[ownerIndex+1],owner.items[ownerIndex]]=[owner.items[ownerIndex],owner.items[ownerIndex+1]];render()};const remove=document.createElement('button');remove.className='smallbtn';remove.textContent='Remove';remove.onclick=()=>{owner.items.splice(ownerIndex,1);assets=manualPages.flatMap(p=>p.items);render()};controls.append(qlabel,q,up,down,remove);info.append(name,controls);el.append(img,info);items.append(el)});updateMeta()}
@@ -338,7 +338,7 @@ for(let i=0;i<pg.items.length;i++){
  const lineH=fontSize/72*1.18;
  doc.text(lines,x+sl.w/2,iy+sl.h+.16,{align:'center',lineHeightFactor:1.18});
  doc.setTextColor(220,0,0);doc.setFont('helvetica','bold');doc.setFontSize(10);
- doc.text('QTY '+a.qty,x+sl.w/2,Math.min(10.88,iy+sl.h+.16+lines.length*lineH+.10),{align:'center'});
+ doc.text('QTY '+a.qty,x+sl.w/2,Math.min(10.88,iy+sl.h+.16+lines.length*lineH+.23),{align:'center'});
 }
 }const filename=($('line').value?'Line_'+$('line').value+'_':'')+'Print_Mockup.pdf';doc.save(filename.replace(/[\\/:*?"<>|]/g,'_'));$('status').textContent='PDF generated successfully.'}catch(e){console.error(e);$('status').textContent='PDF generation failed: '+e.message}finally{busy=false;render()}};
 $('editArtwork').addEventListener('change',()=>{selectedArtworkId=Number($('editArtwork').value)||null;render()});

@@ -176,7 +176,7 @@ function automaticLayout(items){
  // A tall image beside a landscape image shares a baseline, as in the Peppermint example.
  if(mode==='mixed')heights=[4.9];
  const blockH=heights.reduce((a,b)=>a+b,0)+groupGap*(groups.length-1);
- let y=mode==='single'?.50:mode==='stacked'?.30:Math.max(.40,(H-blockH)/2);
+ let y=.32; // Keep the first artwork row close to the job information, rather than vertically centering the entire group.
  groups.forEach((group,ri)=>{
   const h=heights[ri],count=group.length,gap=.22;
   const maxCellW=(W-gap*(count-1))/count;

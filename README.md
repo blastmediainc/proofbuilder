@@ -1,2 +1,1 @@
-Blast Media Print Mockup Builder
-Automatic artwork layouts. Open index.html in browser or upload to GitHub Pages.
+Blast Media Print Mockup Builder. Maximum two artworks per row, with filenames wrapped within their own artwork width. Open index.html in a browser or publish on GitHub Pages.

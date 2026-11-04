@@ -1,1 +1,1 @@
-Blast Media Print Mockup Builder. Artwork begins closer to the header on all page layouts. Open index.html in your browser or publish to GitHub Pages.
+Blast Media Print Mockup Builder. Automatic three-across for three narrow designs. Full filenames wrap in preview and PDF. Open index.html in a browser.

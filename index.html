@@ -393,9 +393,14 @@ for(let i=0;i<pg.items.length;i++){
  const fontSize=lines.length>4?7:lines.length>2?8:9;
  doc.setFontSize(fontSize);
  const lineH=fontSize/72*1.18;
- doc.text(lines,.425+lane.x+lane.w/2,iy+sl.h+.16,{align:'center',lineHeightFactor:1.18});
+ // Match the browser caption: small image-to-name gap, then 12px after the full name.
+ // jsPDF's text y is a baseline; line height is accounted for explicitly.
+ const nameBaseline=iy+sl.h+.13;
+ doc.text(lines,.425+lane.x+lane.w/2,nameBaseline,{align:'center',lineHeightFactor:1.18});
  doc.setTextColor(220,0,0);doc.setFont('helvetica','bold');doc.setFontSize(10);
- doc.text('QTY '+a.qty,.425+lane.x+lane.w/2,Math.min(10.88,iy+sl.h+.16+lines.length*lineH+.23),{align:'center'});
+ const lastNameBaseline=nameBaseline+(lines.length-1)*lineH;
+ const qtyBaseline=lastNameBaseline+.17;
+ doc.text('QTY '+a.qty,.425+lane.x+lane.w/2,Math.min(10.88,qtyBaseline),{align:'center'});
 }
 }const filename=($('line').value?'Line_'+$('line').value+'_':'')+'Print_Mockup.pdf';doc.save(filename.replace(/[\\/:*?"<>|]/g,'_'));$('status').textContent='PDF generated successfully.'}catch(e){console.error(e);$('status').textContent='PDF generation failed: '+e.message}finally{busy=false;render()}};
 $('editArtwork').addEventListener('change',()=>{selectedArtworkId=Number($('editArtwork').value)||null;render()});

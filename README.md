@@ -1,1 +1,1 @@
-Blast Media Print Mockup Builder. Drag or resize artwork to see blue alignment guides and gentle snapping to board centre and neighbouring artwork. Guides do not appear in exported PDFs.
+Blast Media Print Mockup Builder — PDF caption spacing matched more closely to browser preview. Upload index.html to GitHub Pages.

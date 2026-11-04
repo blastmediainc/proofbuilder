@@ -1,1 +1,1 @@
-Blast Media Print Mockup Builder. Automatic three-across for three narrow designs. Full filenames wrap in preview and PDF. Open index.html in a browser.
+Blast Media Print Mockup Builder: artwork filenames are kept within non-overlapping columns, including narrow artwork.
